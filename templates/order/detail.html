@@ -1,0 +1,34 @@
+{% extends 'templates/base.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-12">
+            <section>
+                <div class="row">
+                    {% for product in products %}
+                        <div class="col-lg-3 mb-3 d-flex align-items-stretch">
+                            <div class="card text-black">
+                                <i class="fab  fa-lg pt-3 pb-1 px-3"></i>
+                                <img class="card-img-top" src="{{ product.picture.url }}"
+                                     style="height: 12rem; width: 296px;"
+                                     alt="Card image">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="text-center">
+                                        <h5 class="card-title">{{ product.title }}</h5>
+                                    </div>
+                                    <p class="card-text mb-4" style="">{{ product.description }}</p>
+                                    <p>Price: {{ product.price }}</p>
+                                    <p>Brand:<a href="{% url 'product' product.brand_id %}">{{ product.brand }}</a></p>
+                                    <p>Status: {{ product.status }}</p>
+                                    <p>Quantity: {{ product.quantity }}</p>
+                                    <a href="{% url 'cart_add' product.id %}"
+                                       class="btn btn-warning text-black mt-auto align-self-start">Add
+                                        the Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </section>
+        </div>
+{% endblock %}

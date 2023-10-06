@@ -1,0 +1,26 @@
+{% extends "templates/base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="d-flex justify-content-center mt-4">
+        <form method="post">
+             <h2>Sign Up </h2>
+            <div class="row">
+                <div class="col">
+                    {% csrf_token %}
+                    <input class="form-control mb-2" type="text" name="username" placeholder="Username" style="width: 250px">
+                    <input class="form-control mb-2" type="password" name="password1" placeholder="Password" style="width: 250px">
+                    <input class="form-control mb-2" type="password" name="password2" placeholder="re-password" style="width: 250px">
+                </div>
+            </div>
+            <input type="submit" value="Signup " class="btn btn-warning " style="font-weight: 600;
+            width: 250px;
+        color: black;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer">
+        </form>
+    </div>
+
+{% endblock %}

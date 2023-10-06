@@ -1,0 +1,21 @@
+{% extends 'templates/base.html' %}
+
+{% block content %}
+    <div class="container mt-3">
+        <table class="table table-success table-striped">
+            <thead>
+            <tr>
+                <th>Name</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for b in brand_list %}
+                <tr>
+                    <td><a href="{% url 'product' b.id %}" class="nav-link active"
+                           style="font-weight: 600;">{{ b.name }}</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

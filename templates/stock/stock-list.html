@@ -1,0 +1,27 @@
+{% extends 'templates/base.html' %}
+
+{% block content %}
+    <div class="container mt-3">
+        <table class="table table-success table-striped">
+            <thead>
+            <tr>
+                <th>Vendor</th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for s in stock_list %}
+                <tr>
+                    <td>{{ s.vendor }}</td>
+                    <td>{{ s.product }}</td>
+                    <td>{{ s.quantity }}</td>
+                    <td>{{ s.date }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
